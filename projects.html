@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Oluwafunmilayo Olorode Darasimi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #1e3a8a;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 5px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #1e3a8a;
+        }
+
+        .logo span {
+            color: #8b5cf6;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: #4b5563;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #1e40af;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #3b82f6;
+            cursor: pointer;
+        }
+
+        /* Hero Projects */
+        .hero-projects {
+            padding: 180px 0 80px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #8b5cf6 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero-projects h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-projects p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .category-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: white;
+            color: #3b82f6;
+            border-color: white;
+        }
+
+        /* Projects Grid */
+        .projects-container {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-card.featured {
+            border-left: 5px solid #f59e0b;
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .project-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+
+        .project-title {
+            flex-grow: 1;
+        }
+
+        .project-title h3 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .project-title .role {
+            color: #6b7280;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .project-badge {
+            background: linear-gradient(135deg, #10b981, #34d399);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .project-badge.visionary {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+        }
+
+        .project-content {
+            padding: 35px;
+        }
+
+        .project-overview {
+            font-size: 1.1rem;
+            color: #4b5563;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .project-features h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #374151;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .feature-item i {
+            color: #3b82f6;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .tag {
+            background: #e0e7ff;
+            color: #3b82f6;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .footer-brand p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #8b5cf6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #8b5cf6;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-projects h1 {
+                font-size: 3rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 40px 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s ease;
+                gap: 30px;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .project-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .project-icon {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 70px 0;
+            }
+            
+            .hero-projects {
+                padding: 150px 0 60px;
+            }
+            
+            .hero-projects h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+            
+            .category-filters {
+                gap: 10px;
+            }
+            
+            .category-btn {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-projects h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .project-content {
+                padding: 25px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Oluwafunmilayo<span>.dev</span></a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Projects -->
+    <section class="hero-projects">
+        <div class="container">
+            <h1>My Projects & Initiatives</h1>
+            <p>Explore my portfolio of tech innovations, educational platforms, and social impact projects designed to empower youth and bridge accessibility gaps across Africa.</p>
+            
+            <div class="category-filters">
+                <button class="category-btn active" data-filter="all">All Projects</button>
+                <button class="category-btn" data-filter="edtech">EdTech</button>
+                <button class="category-btn" data-filter="fintech">FinTech</button>
+                <button class="category-btn" data-filter="assistive">Assistive Tech</button>
+                <button class="category-btn" data-filter="visionary">Visionary</button>
+                <button class="category-btn" data-filter="communication">Communication</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Container -->
+    <section class="projects-container">
+        <div class="container">
+            <!-- K.O InnoVatech -->
+            <div class="project-card" id="koinnovatech" data-category="edtech">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="project-title">
+                        <h3>K.O InnoVatech & Co.</h3>
+                        <span class="role">Founder / Lead Innovator</span>
+                        <span class="project-badge">Featured Project</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-overview">
+                        An educational and innovation-driven initiative focused on providing free, inclusive, and practical tech education to students in technical colleges and young innovators. Emphasizes peer-to-peer learning, community collaboration, and real-world digital skills.
+                    </div>
+                    
+                    <div class="project-features">
+                        <h4>Core Focus Areas:</h4>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Cybersecurity fundamentals</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-code"></i>
+                                <span>Programming & software development</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Web design & development</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-robot"></i>
+                                <span>AI prompt engineering (foundational exposure)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-tags">
+                        <span class="tag">EdTech</span>
+                        <span class="tag">Education</span>
+                        <span class="tag">Youth Empowerment</span>
+                        <span class="tag">Peer-to-Peer Learning</span>
+                        <span class="tag">Tech Education</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VI-Connect AI -->
+            <div class="project-card" id="viconnect" data-category="assistive">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <div class="project-title">
+                        <h3>VI-Connect AI</h3>
+                        <span class="role">Co-Founder / Concept Developer</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-overview">
+                        An assistive technology platform built to empower visually impaired individuals through AI and smart-device integration. Designed to improve independence, safety, and digital inclusion for visually impaired users.
+                    </div>
+                    
+                    <div class="project-features">
+                        <h4>Core Features:</h4>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-microphone"></i>
+                                <span>Voice-controlled device navigation</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-user-check"></i>
+                                <span>Facial and voice recognition for security</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-camera"></i>
+                                <span>External smart camera support</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-road"></i>
+                                <span>Real-time mobility and environment guidance</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Secure transaction assistance</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-tags">
+                        <span class="tag">Assistive Technology</span>
+                        <span class="tag">AI Integration</span>
+                        <span class="tag">Accessibility</span>
+                        <span class="tag">Inclusion</span>
+                        <span class="tag">Smart Devices</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SwiftPay -->
+            <div class="project-card" id="swiftpay" data-category="fintech">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas fa-money-bill-transfer"></i>
+                    </div>
+                    <div class="project-title">
+                        <h3>SwiftPay</h3>
+                        <span class="role">Founder / Product Designer</span>
+      
