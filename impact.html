@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact & Vision | Oluwafunmilayo Olorode Darasimi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #1e3a8a;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 5px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #1e3a8a;
+        }
+
+        .logo span {
+            color: #8b5cf6;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: #4b5563;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #1e40af;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #3b82f6;
+            cursor: pointer;
+        }
+
+        /* Hero Impact */
+        .hero-impact {
+            padding: 180px 0 80px;
+            background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-impact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%2306d6a0" fill-opacity="0.1" d="M0,224L48,218.7C96,213,192,203,288,197.3C384,192,480,192,576,202.7C672,213,768,235,864,234.7C960,235,1056,213,1152,192C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+        }
+
+        .hero-impact h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-impact p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .impact-stat {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .impact-stat .number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #06d6a0;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .impact-stat .label {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Impact Areas */
+        .impact-areas {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid #3b82f6;
+        }
+
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        }
+
+        .impact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .impact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        .impact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+        }
+
+        .impact-card p {
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+
+        .impact-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .metric-tag {
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Future Vision */
+        .future-vision {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+        }
+
+        .vision-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .vision-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            border-left: 5px solid #10b981;
+        }
+
+        .vision-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .vision-number {
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            background: #10b981;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .vision-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+            padding-top: 20px;
+        }
+
+        .vision-card p {
+            color: #4b5563;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .footer-brand p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #8b5cf6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #8b5cf6;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-impact h1 {
+                font-size: 3rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 40px 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s ease;
+                gap: 30px;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 70px 0;
+            }
+            
+            .hero-impact {
+                padding: 150px 0 60px;
+            }
+            
+            .hero-impact h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+            
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .impact-stat .number {
+                font-size: 2.5rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-impact h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-grid,
+            .vision-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Oluwafunmilayo<span>.dev</span></a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="impact.html" class="active">Impact</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Impact -->
+    <section class="hero-impact">
+        <div class="container">
+            <h1>Impact & Vision</h1>
+            <p>Measuring the social impact created through my initiatives and outlining the future vision for technology-driven empowerment across Africa.</p>
+            
+            <div class="impact-stats">
+                <div class="impact-stat">
+                    <span class="number">20+</span>
+                    <span class="label">Youth Mentored</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="number">8+</span>
+                    <span class="label">Tech Platforms</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="number">4</span>
+                    <span class="label">Impact Areas</span>
+                </div>
+                <div class="impact-stat">
+                    <span class="number">1000+</span>
+                    <span class="label">Future Target Reach</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Areas -->
+    <section class="impact-areas">
+        <div class="container">
+            <h2 class="section-title">Social Impact Areas</h2>
+            <p style="color: #6b7280; max-width: 700px;">The key domains where my initiatives create measurable change and empowerment</p>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education Reach</h3>
+                    <p>Multiple platforms serving students across secondary schools, technical colleges, and universities with free, practical tech education and career guidance.</p>
+                    <div class="impact-metrics">
+                        <span class="metric-tag">Peer-to-peer learning</span>
+                        <span class="metric-tag">Free tech education</span>
+                        <span class="metric-tag">Career guidance</span>
+                        <span class="metric-tag">Practical skills</span>
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <h3>Technology Inclusion</h3>
+                    <p>Assistive technology solutions designed for visually impaired communities, breaking barriers to digital access and independence.</p>
+                    <div class="impact-metrics">
+                        <span class="metric-tag">Assistive AI</span>
+                        <span class="metric-tag">Voice navigation</span>
+                        <span class="metric-tag">Accessibility</span>
+                        <span class="metric-tag">Digital inclusion</span>
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Financial Inclusion</h3>
+                    <p>Fintech solutions enabling offline and underserved users to participate in the digital economy through accessible payment systems.</p>
+                    <div class="impact-metrics">
+                        <span class="metric-tag">USSD support</span>
+                        <span class="metric-tag">Offline access</span>
+                        <span class="metric-tag">Fraud prevention</span>
+                        <span class="metric-tag">Affordable transactions</span>
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Youth Development</h3>
+                    <p>Structured mentorship programs guiding young individuals in leadership, technology skills, and personal growth for sustainable impact.</p>
+                    <div class="impact-metrics">
+                        <span class="metric-tag">20+ youth mentored</span>
+                        <span class="metric-tag">Leadership programs</span>
+                        <span class="metric-tag">Tech skills training</span>
+                        <span class="metric-tag">Personal development</span>
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>Visionary Infrastructure</h3>
+                    <p>Smart Transit as a national mobility vision, planning for accessible, secure, and AI-assisted transportation across Nigeria.</p>
+                    <div class="impact-metrics">
+                        <span class="metric-tag">14,400 vehicles</span>
+                        <span class="metric-tag">1,220 checkpoints</span>
+                        <span class="metric-tag">AI security</span>
+                        <span class="metric-tag">Nationwide coverage</span>
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Communication Access</h3>
+                    <p>Multilingual communication platforms breaking language barriers and enabling inclusive dialogue across diverse communities.</p>
+                    <div class="impact-metrics">
+                        <span class="metric-tag">Real-time translation</span>
+                        <span class="metric-tag">AI interpretation</span>
+                        <span class="metric-tag">Accessibility features</span>
+                        <span class="metric-tag">Privacy protection</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Vision -->
+    <section class="future-vision">
+        <div class="container">
+            <h2 class="section-title">Future Vision</h2>
+            <p style="color: #6b7280; max-width: 700px;">Strategic roadmap for scaling impact and expanding innovation across Africa</p>
+            
+            <div class="vision-cards">
+                <div class="vision-card">
+                    <div class="vision-number">1</div>
+                    <h3>Scaled EdTech Expansion</h3>
+                    <p>Expanding K.O InnoVatech to reach 50+ technical institutions across Nigeria, establishing regional learning hubs and industry partnerships for enhanced employability.</p>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-number">2</div>
+                    <h3>Accessibility First Initiative</h3>
+                    <p>Mainstreaming VI-Connect AI features into mainstream tech products and partnering with device manufacturers to build accessibility into core technology experiences.</p>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-number">3</div>
+                    <h3>Pan-African FinTech Growth</h3>
+                    <p>Growing SwiftPay to serve 5+ African countries, integrating with local banking systems and creating cross-border payment corridors for economic empowerment.</p>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-number">4</div>
+                    <h3>AI for Good Development</h3>
+                    <p>Developing more assistive and educational AI tools focused on healthcare, agriculture, and climate resilience for underserved communities.</p>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-number">5</div>
+                    <h3>Youth Leadership Pipeline</h3>
+                    <p>Creating sustainable mentorship ecosystems to guide 100+ youth annually through structured programs that combine tech skills with entrepreneurial training.</p>
+                </div>
+                
+                <div class="vision-card">
+                    <div class="vision-number">6</div>
+                    <h3>Smart Transit Implementation</h3>
+                    <p>Piloting Smart Transit in 3 states with public-private partnerships, demonstrating the viability of AI-assisted, secure, and affordable national transportation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Join the Vision</h2>
+            <p>I'm actively seeking partnerships, collaborations, and support to scale these impact initiatives. Whether you're an investor, organization, or fellow innovator, let's work together to empower communities through technology.</p>
+            <a href="contact.html" class="btn btn-primary" style="background: #06d6a0; border: none;">
+                <i class="fas fa-handshake"></i> Partner With Me
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">Oluwafunmilayo<span>.dev</span></div>
+                    <p>Building inclusive technology solutions and empowering the next generation of African innovators through education, accessibility, and innovation.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="impact.html">Impact & Vision</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Impact Areas</h3>
+                    <ul>
+                        <li>Youth Education</li>
+                        <li>Assistive Technology</li>
+                        <li>Financial Inclusion</li>
+                        <li>Smart Transportation</li>
+                        <li>AI for Good</li>
+                        <li>Community Empowerment</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Get Involved</h3>
+                    <ul>
+                        <li><i class="fas fa-handshake"></i> Partnerships</li>
+                        <li><i class="fas fa-users"></i> Collaborations</li>
+                        <li><i class="fas fa-bullhorn"></i> Speaking</li>
+                        <li><i class="fas fa-lightbulb"></i> Innovation Labs</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Oluwafunmilayo Olorode Darasimi. All rights reserved. | Designed with passion for impact and innovation</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking on links
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Animate impact cards on scroll
+        const impactCards = document.querySelectorAll('.impact-card, .vision-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        impactCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
